@@ -18,6 +18,9 @@ elif [ -f "server.js" ]; then
 elif [ -f "server.java" ]; then
     echo "Компиляция Java сервера..."
     javac server.java
+elif [ -f "src/bin/server.rs" ]; then
+    echo "Компиляция Rust сервера с менеджером проектов Cargo..."
+    cargo build --bin=server
 else
     echo "Не найден файл сервера для компиляции"
     exit 1
